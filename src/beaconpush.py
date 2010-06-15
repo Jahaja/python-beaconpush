@@ -138,7 +138,7 @@ class BeaconPush(object):
 
 
 def test():
-    beacon_push = BeaconPush('187392a7', '651f6a11badd45d13df0150119f6f1b8f8c4fea9')
+    beacon_push = BeaconPush('your_api_key_here', 'your_api_secrey_key_here')
     print "get users in channel response:", beacon_push.get_users_in_channel('mychannel')
     print "send channel message response:", beacon_push.channel_send_message('mychannel', 'Proper call, eh!')
     print "send user message response:", beacon_push.user_send_message('myuser', 'Proper call, eh!')
