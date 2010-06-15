@@ -1,0 +1,9 @@
+A straight forward python client for the BeaconPush service API
+
+** Information **
+BeaconPush enables real-time on your website in a few simple steps.
+Read more, and get your api-key, at http://beaconpush.com
+
+** Installation **
+Navigate to directory and execute the following command:
+python setup.py install
