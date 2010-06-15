@@ -16,9 +16,7 @@ class NullHandler(logging.Handler):
         pass
 
 logger = logging.getLogger("BeaconPush")
-logger.setLevel(logging.DEBUG)
 logger.addHandler(NullHandler())
-#logger.addHandler(logging.StreamHandler())
 
 class BeaconPush(object):
     api_host = "beaconpush.com"
@@ -138,7 +136,7 @@ class BeaconPush(object):
 
 
 def test():
-    beacon_push = BeaconPush('your_api_key_here', 'your_api_secrey_key_here')
+    beacon_push = BeaconPush('your_api_key_here', 'your_api_secret_key_here')
     print "get users in channel response:", beacon_push.get_users_in_channel('mychannel')
     print "send channel message response:", beacon_push.channel_send_message('mychannel', 'Proper call, eh!')
     print "send user message response:", beacon_push.user_send_message('myuser', 'Proper call, eh!')
