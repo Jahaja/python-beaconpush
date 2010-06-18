@@ -52,7 +52,7 @@ class BeaconPush(object):
         return url
 
     def _dump_data(self, data):
-        if isinstance(data, (str, int, float)):
+        if isinstance(data, (unicode, str, int, float)):
             data = [data]
 
         return json.dumps(data)
