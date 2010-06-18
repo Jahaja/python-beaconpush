@@ -11,7 +11,7 @@
     <textarea id="log" rows="30" cols="80"></textarea>
     <script type="text/javascript" src="http://beaconpush.com/1.0.1/client.js"></script>
     <script type="text/javascript">
-        Beacon.connect('187392a7', ['frontpage'], {log: true});
+        Beacon.connect('your_api_key_here', ['frontpage'], {log: true});
         Beacon.listen(function (message) {
             textbox = document.getElementById('log');
             textbox.innerHTML += message.time + ' - ' + message.msg + "\r\n\r\n";

@@ -26,7 +26,7 @@ logger.addHandler(logging.StreamHandler())
 
 def main():
     # Set up the beacon service
-    bp = BeaconPush('187392a7', '651f6a11badd45d13df0150119f6f1b8f8c4fea9')
+    bp = BeaconPush('api_key_here', 'api_secret_key_here')
 
     # Send some channel messages randomly every 0-10 seconds forever 
     while True:
