@@ -37,6 +37,7 @@ class BeaconPush(object):
     api_host = "beaconpush.com"
     api_version = "1.0.0"
     api_url = "/api/%(version)s/%(api_key)s/%(command)s"
+    default_user_key_salt = "4364Bsddf43dflkmsdflm43tdf"
 
     def __init__(self, api_key, secret_key, host=None):
         self.api_key = api_key
@@ -149,7 +150,7 @@ class BeaconPush(object):
         else:
             return False
 
-    def create_user_key(self, user_identifier):
+    def create_user_key(self, user_identifier, salt=None):
         """
         Helper method to create a unique user identifier to be used in your user-specific
 
@@ -158,7 +159,10 @@ class BeaconPush(object):
 
         @param user_identifier a value unique for your user. (eg. username or user-id)
         """
-        origstr = "".join((self.user_key_salt, str(user_identifier), self.secret_key))
+        if not salt:
+            salt = self.default_user_key_salt
+
+        origstr = "".join((salt, str(user_identifier), self.secret_key))
         return hashlib.md5(origStr).hexdigest()
 
 
