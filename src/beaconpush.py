@@ -149,6 +149,18 @@ class BeaconPush(object):
         else:
             return False
 
+    def create_user_key(self, user_identifier):
+        """
+        Helper method to create a unique user identifier to be used in your user-specific
+
+        For usage with:
+        Beacon.connect(api_key, channels, {user: created-user-key});
+
+        @param user_identifier a value unique for your user. (eg. username or user-id)
+        """
+        origstr = "".join((self.user_key_salt, str(user_identifier), self.secret_key))
+        return hashlib.md5(origStr).hexdigest()
+
 
 def test():
     beacon_push = BeaconPush('your_api_key_here', 'your_api_secret_key_here')
