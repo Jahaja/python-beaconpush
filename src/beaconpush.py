@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #
 # Copyright 2010 Joakim Hamrén
 #
@@ -52,7 +53,7 @@ class BeaconPush(object):
         return url
 
     def _dump_data(self, data):
-        if isinstance(data, (str, int, float)):
+        if isinstance(data, (unicode, str, int, float)):
             data = [data]
 
         return json.dumps(data)
